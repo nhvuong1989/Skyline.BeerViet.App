@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -8,108 +10,44 @@ namespace Skyline.BeerViet.App
 {
     public class HttpHelper
     {
-        private string applicationKey;
-        public string ApplicationKey
+
+        public string CallRestService(string url, Method method, object args, string filePath = "")
         {
-            get { return applicationKey; }
-            set { applicationKey = value; }
-        }
-
-        private string applicationSecret;
-        public string ApplicationSecret
-        {
-            get { return applicationSecret; }
-            set { applicationSecret = value; }
-        }
-
-        private string webRequestContentType = "application/json; charset=UTF-8";
-        public string WebRequestContentType
-        {
-            get { return webRequestContentType; }
-            set { webRequestContentType = value; }
-        }
-
-        private string webRequestAccept = "application/json";
-        public string WebRequestAccept
-        {
-            get { return webRequestAccept; }
-            set { webRequestAccept = value; }
-        }
-
-        private int webRequestTimeout = 3600000; //1 hour
-        public int WebRequestTimeout
-        {
-            get { return webRequestTimeout; }
-            set { webRequestTimeout = value; }
-        }
-
-        private Dictionary<string, string> customHeaders;
-        public Dictionary<string, string> CustomHeaders
-        {
-            get { return customHeaders; }
-            set { customHeaders = value; }
-        }
-
-        public string CallRestService(string url, string method, string args)
-        {
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            if (request == null) return string.Empty;
-
-            request.Method = method;
-            request.ContentType = webRequestContentType;
-            request.Accept = webRequestAccept;
-            request.PreAuthenticate = !String.IsNullOrEmpty(ApplicationKey);
-            request.Timeout = WebRequestTimeout;
-            request.ReadWriteTimeout = WebRequestTimeout;
-
-            if (CustomHeaders != null)
+            try
             {
-                foreach (KeyValuePair<string, string> header in CustomHeaders)
-                {
-                    request.Headers.Add(header.Key, header.Value);
-                }
-            }
+                var client = new RestClient(url);
+                client.Timeout = -1;
+                var restRequest = new RestRequest(method);
 
-            if (!String.IsNullOrEmpty(args))
+                if (args != null)
+                {
+                    restRequest.AddJsonBody(args);
+                }
+
+                if (!string.IsNullOrWhiteSpace(filePath))
+                {
+                    byte[] arrData = File.ReadAllBytes(filePath);
+                    restRequest.AddFile("Files", arrData, Path.GetFileName(filePath));
+                }
+
+
+                IRestResponse response = client.Execute(restRequest);
+                return response.Content;
+            }
+            catch (Exception ex)
             {
-                byte[] postBytes = Encoding.UTF8.GetBytes(args);
-                request.ContentLength = postBytes.Length;
-                using (Stream postStream = request.GetRequestStream())
-                {
-                    postStream.Write(postBytes, 0, postBytes.Length);
-                    postStream.Close();
-                }
             }
-
-            HttpWebResponse respone = request.GetResponse() as HttpWebResponse;
-            if (respone == null) return string.Empty;
-
-            string result = string.Empty;
-            using (Stream responeStream = respone.GetResponseStream())
-            {
-                if (responeStream != null)
-                {
-                    using (StreamReader streamReader = new StreamReader(responeStream))
-                    {
-                        result = streamReader.ReadToEnd();
-                    }
-                }
-            }
-
-            respone.Close();
-            respone = null;
-
-            return result;
+            return "";
         }
 
         public string GETRestService(string url)
         {
-            return CallRestService(url, "GET", string.Empty);
+            return CallRestService(url, Method.GET, string.Empty);
         }
 
-        public string POSTRestService(string url, string args)
+        public string POSTRestService(string url, object args, string filePath = "")
         {
-            return CallRestService(url, "POST", args);
+            return CallRestService(url, Method.POST, args, filePath);
         }
     }
 

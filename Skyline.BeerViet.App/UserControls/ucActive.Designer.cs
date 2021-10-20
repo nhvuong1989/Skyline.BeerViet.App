@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
@@ -44,13 +45,17 @@
             this.colTeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckOutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMnuApplication = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.uploadStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvSale = new System.Windows.Forms.DataGridView();
             this.colSaleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colhUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colhBeerVietNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGener = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGif7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGif1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGif2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGif3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +68,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).BeginInit();
+            this.cMnuApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +143,7 @@
             this.colTeamName,
             this.colCheckInTime,
             this.colCheckOutTime});
+            this.dgvCheckIn.ContextMenuStrip = this.cMnuApplication;
             this.dgvCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCheckIn.Location = new System.Drawing.Point(0, 0);
             this.dgvCheckIn.MultiSelect = false;
@@ -147,7 +154,7 @@
             this.dgvCheckIn.Size = new System.Drawing.Size(1008, 224);
             this.dgvCheckIn.TabIndex = 0;
             this.dgvCheckIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellContentClick);
-            this.dgvCheckIn.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellContentDoubleClick);
+            this.dgvCheckIn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellDoubleClick);
             // 
             // colId
             // 
@@ -220,6 +227,22 @@
             this.colCheckOutTime.Name = "colCheckOutTime";
             this.colCheckOutTime.ReadOnly = true;
             // 
+            // cMnuApplication
+            // 
+            this.cMnuApplication.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cMnuApplication.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uploadStripMenuItem});
+            this.cMnuApplication.Name = "cMnuApplication";
+            this.cMnuApplication.Size = new System.Drawing.Size(145, 26);
+            this.cMnuApplication.Opening += new System.ComponentModel.CancelEventHandler(this.cMnuApplication_Opening);
+            // 
+            // uploadStripMenuItem
+            // 
+            this.uploadStripMenuItem.Name = "uploadStripMenuItem";
+            this.uploadStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.uploadStripMenuItem.Text = "Upload BBNT";
+            this.uploadStripMenuItem.Click += new System.EventHandler(this.uploadStripMenuItem_Click);
+            // 
             // dgvSale
             // 
             this.dgvSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -227,9 +250,11 @@
             this.colSaleId,
             this.colhUserName,
             this.colhBeerVietNum,
+            this.colUnit,
             this.colGener,
             this.colCustomerName,
             this.colCustomerPhone,
+            this.colGif7,
             this.colGif1,
             this.colGif2,
             this.colGif3,
@@ -269,6 +294,13 @@
             this.colhBeerVietNum.Name = "colhBeerVietNum";
             this.colhBeerVietNum.ReadOnly = true;
             // 
+            // colUnit
+            // 
+            this.colUnit.DataPropertyName = "Unit";
+            this.colUnit.HeaderText = "Loại thùng bia";
+            this.colUnit.Name = "colUnit";
+            this.colUnit.ReadOnly = true;
+            // 
             // colGener
             // 
             this.colGener.DataPropertyName = "Gener";
@@ -290,12 +322,20 @@
             this.colCustomerPhone.Name = "colCustomerPhone";
             this.colCustomerPhone.ReadOnly = true;
             // 
+            // colGif7
+            // 
+            this.colGif7.DataPropertyName = "Gif7";
+            this.colGif7.HeaderText = "Lon bia";
+            this.colGif7.Name = "colGif7";
+            this.colGif7.ReadOnly = true;
+            // 
             // colGif1
             // 
             this.colGif1.DataPropertyName = "Gif1";
             this.colGif1.HeaderText = "Nón bảo hiểm";
             this.colGif1.Name = "colGif1";
             this.colGif1.ReadOnly = true;
+            this.colGif1.Visible = false;
             // 
             // colGif2
             // 
@@ -303,6 +343,7 @@
             this.colGif2.HeaderText = "Thùng đá 1.6l";
             this.colGif2.Name = "colGif2";
             this.colGif2.ReadOnly = true;
+            this.colGif2.Visible = false;
             // 
             // colGif3
             // 
@@ -310,6 +351,7 @@
             this.colGif3.HeaderText = "Ly thuỷ tinh";
             this.colGif3.Name = "colGif3";
             this.colGif3.ReadOnly = true;
+            this.colGif3.Visible = false;
             // 
             // colGif4
             // 
@@ -317,6 +359,7 @@
             this.colGif4.HeaderText = "Đồng hồ treo tường";
             this.colGif4.Name = "colGif4";
             this.colGif4.ReadOnly = true;
+            this.colGif4.Visible = false;
             // 
             // colGif5
             // 
@@ -324,6 +367,7 @@
             this.colGif5.HeaderText = "Áo mưa bia việt";
             this.colGif5.Name = "colGif5";
             this.colGif5.ReadOnly = true;
+            this.colGif5.Visible = false;
             // 
             // colGif6
             // 
@@ -331,6 +375,7 @@
             this.colGif6.HeaderText = "Thùng đá 9l";
             this.colGif6.Name = "colGif6";
             this.colGif6.ReadOnly = true;
+            this.colGif6.Visible = false;
             // 
             // ucActive
             // 
@@ -346,6 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).EndInit();
+            this.cMnuApplication.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).EndInit();
             this.ResumeLayout(false);
 
@@ -368,18 +414,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOutTime;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.DateTimePicker dtpViewDate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ContextMenuStrip cMnuApplication;
+        private System.Windows.Forms.ToolStripMenuItem uploadStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colhUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colhBeerVietNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGener;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGif7;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif4;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif5;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGif6;
-        private System.Windows.Forms.Button btnAdd;
     }
 }

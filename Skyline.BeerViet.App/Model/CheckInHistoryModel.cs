@@ -13,5 +13,6 @@
         public string TeamName { get; set; }
         public string CheckInTime { get; set; }
         public string CheckOutTime { get; set; }
+        public string CheckInPath { get; set; }
     }
 }

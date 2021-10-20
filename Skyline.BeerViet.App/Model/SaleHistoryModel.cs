@@ -10,6 +10,8 @@ namespace Skyline.BeerViet.App
         public string UserName { get; set; }
         [Description("Số lượng")]
         public int BeerVietNum { get; set; }
+        [Description("Loại thùng bia")]
+        public int Unit { get; set; }
         [Description("Giới tính")]
         public string Gener { get; set; }
         [Description("Tên khách hàng")]
@@ -28,6 +30,8 @@ namespace Skyline.BeerViet.App
         public int Gif5 { get; set; }
         [Description("Thùng đá 9l")]
         public int Gif6 { get; set; }
+        [Description("Lon Bia")]
+        public int Gif7 { get; set; }
         [Description("Ngày bán")]
         public string SaleDated { get; set; }
     }

@@ -16,7 +16,7 @@ namespace Skyline.BeerViet.App
         private List<ProvinceModel> GetProvinces()
         {
             HttpHelper httpHelper = new HttpHelper();
-            string url = UserConfigs.API_URL + $@"api/Master/GetProvincesNotBelongStock";
+            string url = UserConfigs.API_URL + $@"api/Stock/GetProvincesNotBelongStock";
             string result = httpHelper.GETRestService(url);
             if (!string.IsNullOrEmpty(result))
             {
@@ -28,38 +28,39 @@ namespace Skyline.BeerViet.App
             }
             return null;
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             List<ProvinceModel> provinces = GetProvinces();
-            (clbProvinces as ListBox).DataSource = provinces;
+            cboProvince.DataSource = provinces;
 
-            (clbProvinces as ListBox).ValueMember = "Id";
-            (clbProvinces as ListBox).DisplayMember = "Name";
+            cboProvince.ValueMember = "Id";
+            cboProvince.DisplayMember = "Name";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            List<int> provinceIds = new List<int>();
-            for (int i = 0; i < clbProvinces.CheckedItems.Count; i++)
-            {
-                var selected = clbProvinces.CheckedItems[i] as ProvinceModel;
-                provinceIds.Add(CodeHelper.ConvertToInt(selected?.Id));
-            }
             StockModel stockModel = new StockModel
             {
                 Id = 0,
                 StockName = txtStockName.Text,
-                ProvinceIds = JsonConvert.SerializeObject(provinceIds)
+                ProvinceId = CodeHelper.ConvertToString(cboProvince.SelectedValue),
+                ProvinceName = cboProvince.Text
             };
             HttpHelper httpHelper = new HttpHelper();
-            string url = UserConfigs.API_URL + $@"api/Master/CreateOrUpdateStock";
-            string result = httpHelper.POSTRestService(url, JsonConvert.SerializeObject(stockModel));
+            string url = UserConfigs.API_URL + $@"api/Stock/CreateOrUpdateStock";
+            string result = httpHelper.POSTRestService(url, stockModel);
             if (!string.IsNullOrEmpty(result))
             {
-                ApiRespone<List<ProvinceModel>> apiRespone = JsonConvert.DeserializeObject<ApiRespone<List<ProvinceModel>>>(result);
+                ApiRespone<ReturnMessage> apiRespone = JsonConvert.DeserializeObject<ApiRespone<ReturnMessage>>(result);
                 if (apiRespone != null)
                 {
+                    MessageBox.Show(apiRespone.Message);
+                    if (apiRespone.Id > 0)
+                    {
+                        this.Close();
+                    }
                 }
             }
         }

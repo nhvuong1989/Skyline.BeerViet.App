@@ -62,11 +62,11 @@ namespace Skyline.BeerViet.App
                 TeamNum = CodeHelper.ConvertToInt(nudNumberTeam.Value),
                 TeamType = teamType
             };
-            string request = JsonConvert.SerializeObject(userModel);
-            string result = httpHelper.POSTRestService(url, request);
+            //string request = JsonConvert.SerializeObject(userModel);
+            string result = httpHelper.POSTRestService(url, userModel);
             if (!string.IsNullOrEmpty(result))
             {
-                ApiRespone<ReturnMessage> apiRespone = JsonConvert.DeserializeObject<ApiRespone<ReturnMessage>>(result);
+                ApiRespone<int> apiRespone = JsonConvert.DeserializeObject<ApiRespone<int>>(result);
                 if (apiRespone != null)
                 {
                     MessageBox.Show(apiRespone.Message);

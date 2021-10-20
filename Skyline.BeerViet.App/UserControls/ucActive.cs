@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Skyline.BeerViet.App
@@ -81,10 +82,59 @@ namespace Skyline.BeerViet.App
             }
         }
 
-        private void dgvCheckIn_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void uploadStripMenuItem_Click(object sender, EventArgs e)
         {
+            CheckInHistoryModel row = this.dgvCheckIn.SelectedRows[0].DataBoundItem as CheckInHistoryModel;
+            if (row != null)
+            {
+                string fileUpload;
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+                    openFileDialog.Filter = "Pdf files (*.pdf)|*.pdf";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        //Get the path of specified file
+                        fileUpload = openFileDialog.FileName;
+
+                        HttpHelper httpHelper = new HttpHelper();
+                        string url = UserConfigs.API_URL + $@"api/Sale/UploadAttachment?pCheckInPath={row.CheckInPath}";
+                        string result = httpHelper.POSTRestService(url, null, fileUpload);
+                        if (!string.IsNullOrEmpty(result))
+                        {
+                            ApiRespone<List<SaleHistoryModel>> apiRespone = JsonConvert.DeserializeObject<ApiRespone<List<SaleHistoryModel>>>(result);
+                            if (apiRespone != null)
+                            {
+                                MessageBox.Show(apiRespone.Message);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cMnuApplication_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (this.dgvCheckIn.SelectedRows.Count == 0)
+            {
+                e.Cancel = true;
+            }
 
 
+        }
+
+        private void dgvCheckIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                CheckInHistoryModel checkInHistoryModel = dgvCheckIn.SelectedRows[0].DataBoundItem as CheckInHistoryModel;
+                frmCheckIn frmCheckIn = new frmCheckIn(checkInHistoryModel);
+                frmCheckIn.ShowDialog();
+                SetDataBinding();
+            }
         }
     }
 }

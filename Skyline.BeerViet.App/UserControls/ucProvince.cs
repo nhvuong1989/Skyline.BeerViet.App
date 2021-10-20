@@ -164,6 +164,9 @@ namespace Skyline.BeerViet.App
                 provinceCode = names[0].Substring(0, 1).ToUpper() + names[1].Substring(0, 1).ToUpper()
                     + names[2].Substring(0, 1).ToUpper();
             }
+
+            provinceCode = CodeHelper.ConvertToUnsign(provinceCode);
+
             frmUsers frm = new frmUsers(provinceId, provinceCode, provinceName);
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -227,17 +230,17 @@ namespace Skyline.BeerViet.App
                                         WorkShopName = worksheet.Range[$"A{idx}"].Value,
                                         WorkShopAddress = worksheet.Range[$"B{idx}"].Value,
                                         ResultText = worksheet.Range[$"C{idx}"].Value,
-                                        ExecuteDate = worksheet.Range[$"D{idx}"].Value
+                                        ExecuteDate = CodeHelper.ConvertToString(worksheet.Range[$"D{idx}"].Value2)
                                     });
 
                                 idx++;
                             }
-                            string request = JsonConvert.SerializeObject(workShops);
+                            //string request = JsonConvert.SerializeObject(workShops);
 
                             HttpHelper httpHelper = new HttpHelper();
-                            string url = UserConfigs.API_URL + $@"api/Master/ImportWorkShop";                            
+                            string url = UserConfigs.API_URL + $@"api/Master/ImportWorkShop";
 
-                            string result = httpHelper.POSTRestService(url, request);
+                            string result = httpHelper.POSTRestService(url, workShops);
                             if (!string.IsNullOrEmpty(result))
                             {
                                 ApiRespone<ReturnMessage> apiRespone = JsonConvert.DeserializeObject<ApiRespone<ReturnMessage>>(result);

@@ -30,11 +30,12 @@ namespace Skyline.BeerViet.App
 
         protected override void OnLoad(EventArgs e)
         {
-            if(_saleDetail!=null)
+            if (_saleDetail != null)
             {
                 txtCustomer.Text = _saleDetail.CustomerName;
                 txtPhoneNumber.Text = _saleDetail.CustomerPhone;
                 txtGener.Text = _saleDetail.Gener;
+                cboUnit.Text = _saleDetail.Unit.ToString();
 
                 nudBeerVietNum.Value = _saleDetail.BeerVietNum;
                 nudGif1.Value = _saleDetail.Gif1;
@@ -43,15 +44,28 @@ namespace Skyline.BeerViet.App
                 nudGif4.Value = _saleDetail.Gif4;
                 nudGif5.Value = _saleDetail.Gif5;
                 nudGif6.Value = _saleDetail.Gif6;
+                nudGif7.Value = _saleDetail.Gif7;
+
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (nudBeerVietNum.Value !=
-                (nudGif1.Value + nudGif2.Value + nudGif3.Value + nudGif4.Value + nudGif5.Value + nudGif6.Value))
+            //if (nudBeerVietNum.Value !=
+            //    (nudGif1.Value + nudGif2.Value + nudGif3.Value + nudGif4.Value + nudGif5.Value + nudGif6.Value))
+            //{
+            //    MessageBox.Show("Số lượng thùng bia phải bằng tổng số phần quà!");
+            //    return;
+            //}
+
+            if (cboUnit.Text == "12" && nudBeerVietNum.Value * 2 != nudGif7.Value)
             {
-                MessageBox.Show("Số lượng thùng bia phải bằng tổng số phần quà!");
+                MessageBox.Show("Số lượng lon bia phải bằng số thùng * 2 !");
+                return;
+            }
+            else if (cboUnit.Text == "24" && nudBeerVietNum.Value * 4 != nudGif7.Value)
+            {
+                MessageBox.Show("Số lượng lon bia phải bằng số thùng * 4 !");
                 return;
             }
 
@@ -64,6 +78,7 @@ namespace Skyline.BeerViet.App
                     SaleId = _saleDetail.SaleId,
                     CustomerName = txtCustomer.Text,
                     CustomerPhone = txtPhoneNumber.Text,
+                    Unit = CodeHelper.ConvertToInt(cboUnit.Text),
                     Gener = txtGener.Text,
                     UserName = "sys",
                     BeerVietNum = (int)nudBeerVietNum.Value,
@@ -72,10 +87,12 @@ namespace Skyline.BeerViet.App
                     Gif3 = (int)nudGif3.Value,
                     Gif4 = (int)nudGif4.Value,
                     Gif5 = (int)nudGif5.Value,
-                    Gif6 = (int)nudGif6.Value
+                    Gif6 = (int)nudGif6.Value,
+                    Gif7 = (int)nudGif7.Value
+
                 };
-                string request = JsonConvert.SerializeObject(saleHistory);
-                string result = httpHelper.POSTRestService(url, request);
+                //string request = JsonConvert.SerializeObject(saleHistory);
+                string result = httpHelper.POSTRestService(url, saleHistory);
                 if (!string.IsNullOrEmpty(result))
                 {
                     ApiRespone<ReturnMessage> apiRespone = JsonConvert.DeserializeObject<ApiRespone<ReturnMessage>>(result);
@@ -98,16 +115,19 @@ namespace Skyline.BeerViet.App
                     TeamId = _teamId,
                     HistoryId = _historyId,
                     BeerVietNum = (int)nudBeerVietNum.Value,
+                    Unit = CodeHelper.ConvertToInt(cboUnit.Text),
                     Gif1 = (int)nudGif1.Value,
                     Gif2 = (int)nudGif2.Value,
                     Gif3 = (int)nudGif3.Value,
                     Gif4 = (int)nudGif4.Value,
                     Gif5 = (int)nudGif5.Value,
-                    Gif6 = (int)nudGif6.Value
+                    Gif6 = (int)nudGif6.Value,
+                    Gif7 = (int)nudGif7.Value
+
 
                 };
-                string request = JsonConvert.SerializeObject(saleHistory);
-                string result = httpHelper.POSTRestService(url, request);
+                //string request = JsonConvert.SerializeObject(saleHistory);
+                string result = httpHelper.POSTRestService(url, saleHistory);
                 if (!string.IsNullOrEmpty(result))
                 {
                     ApiRespone<ReturnMessage> apiRespone = JsonConvert.DeserializeObject<ApiRespone<ReturnMessage>>(result);

@@ -30,9 +30,9 @@
         {
             this.lblStockName = new System.Windows.Forms.Label();
             this.txtStockName = new System.Windows.Forms.TextBox();
-            this.clbProvinces = new System.Windows.Forms.CheckedListBox();
             this.lblProvinces = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cboProvince = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblStockName
@@ -52,14 +52,6 @@
             this.txtStockName.Size = new System.Drawing.Size(329, 22);
             this.txtStockName.TabIndex = 1;
             // 
-            // clbProvinces
-            // 
-            this.clbProvinces.FormattingEnabled = true;
-            this.clbProvinces.Location = new System.Drawing.Point(154, 110);
-            this.clbProvinces.Name = "clbProvinces";
-            this.clbProvinces.Size = new System.Drawing.Size(329, 225);
-            this.clbProvinces.TabIndex = 2;
-            // 
             // lblProvinces
             // 
             this.lblProvinces.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -72,7 +64,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(408, 350);
+            this.btnSave.Location = new System.Drawing.Point(222, 150);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -80,12 +72,20 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cboProvince
+            // 
+            this.cboProvince.FormattingEnabled = true;
+            this.cboProvince.Location = new System.Drawing.Point(154, 110);
+            this.cboProvince.Name = "cboProvince";
+            this.cboProvince.Size = new System.Drawing.Size(329, 24);
+            this.cboProvince.TabIndex = 5;
+            // 
             // frmStock
             // 
-            this.ClientSize = new System.Drawing.Size(500, 380);
+            this.ClientSize = new System.Drawing.Size(500, 184);
+            this.Controls.Add(this.cboProvince);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblProvinces);
-            this.Controls.Add(this.clbProvinces);
             this.Controls.Add(this.txtStockName);
             this.Controls.Add(this.lblStockName);
             this.Name = "frmStock";
@@ -99,8 +99,8 @@
 
         private System.Windows.Forms.Label lblStockName;
         private System.Windows.Forms.TextBox txtStockName;
-        private System.Windows.Forms.CheckedListBox clbProvinces;
         private System.Windows.Forms.Label lblProvinces;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cboProvince;
     }
 }

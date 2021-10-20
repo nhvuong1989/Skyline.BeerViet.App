@@ -35,6 +35,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Compression.Base, Version=19.1450.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Compression.Base.19.1.0.59\lib\net45\Syncfusion.Compression.Base.dll</HintPath>
     </Reference>
@@ -111,9 +114,11 @@
     <Compile Include="Model\ProvinceModel.cs" />
     <Compile Include="Model\ReturnMessage.cs" />
     <Compile Include="Model\SaleHistoryModel.cs" />
+    <Compile Include="Model\StockInModel.cs" />
     <Compile Include="Model\StockModel.cs" />
     <Compile Include="Model\StockHisModel.cs" />
     <Compile Include="Model\TotalGiveGifModel.cs" />
+    <Compile Include="Model\UseGifModel.cs" />
     <Compile Include="Model\WorkShop.cs" />
     <Compile Include="Model\TeamModel.cs" />
     <Compile Include="Model\UserModel.cs" />

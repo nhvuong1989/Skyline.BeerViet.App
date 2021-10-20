@@ -1,4 +1,4 @@
-﻿namespace Skyline.BeerViet.App.Forms
+﻿namespace Skyline.BeerViet.App
 {
     partial class frmStockIn
     {
@@ -42,6 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpDateInput = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif5)).BeginInit();
@@ -53,6 +55,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dtpDateInput);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.nudGif6);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.nudGif5);
@@ -66,10 +70,10 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(27, 11);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(389, 171);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(389, 195);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhập hàng";
@@ -77,7 +81,7 @@
             // nudGif6
             // 
             this.nudGif6.Location = new System.Drawing.Point(117, 138);
-            this.nudGif6.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif6.Name = "nudGif6";
             this.nudGif6.Size = new System.Drawing.Size(255, 20);
             this.nudGif6.TabIndex = 15;
@@ -96,7 +100,7 @@
             // nudGif5
             // 
             this.nudGif5.Location = new System.Drawing.Point(117, 115);
-            this.nudGif5.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif5.Name = "nudGif5";
             this.nudGif5.Size = new System.Drawing.Size(255, 20);
             this.nudGif5.TabIndex = 13;
@@ -104,7 +108,7 @@
             // nudGif4
             // 
             this.nudGif4.Location = new System.Drawing.Point(117, 93);
-            this.nudGif4.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif4.Name = "nudGif4";
             this.nudGif4.Size = new System.Drawing.Size(255, 20);
             this.nudGif4.TabIndex = 12;
@@ -112,7 +116,7 @@
             // nudGif3
             // 
             this.nudGif3.Location = new System.Drawing.Point(117, 70);
-            this.nudGif3.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif3.Name = "nudGif3";
             this.nudGif3.Size = new System.Drawing.Size(255, 20);
             this.nudGif3.TabIndex = 11;
@@ -120,7 +124,7 @@
             // nudGif2
             // 
             this.nudGif2.Location = new System.Drawing.Point(117, 47);
-            this.nudGif2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif2.Name = "nudGif2";
             this.nudGif2.Size = new System.Drawing.Size(255, 20);
             this.nudGif2.TabIndex = 10;
@@ -128,7 +132,7 @@
             // nudGif1
             // 
             this.nudGif1.Location = new System.Drawing.Point(117, 24);
-            this.nudGif1.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGif1.Name = "nudGif1";
             this.nudGif1.Size = new System.Drawing.Size(255, 20);
             this.nudGif1.TabIndex = 9;
@@ -190,7 +194,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(350, 189);
+            this.btnSave.Location = new System.Drawing.Point(341, 211);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -198,11 +202,30 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(14, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Ngày nhập";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpDateInput
+            // 
+            this.dtpDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateInput.Location = new System.Drawing.Point(117, 158);
+            this.dtpDateInput.Name = "dtpDateInput";
+            this.dtpDateInput.Size = new System.Drawing.Size(255, 20);
+            this.dtpDateInput.TabIndex = 17;
+            // 
             // frmStockIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 216);
+            this.ClientSize = new System.Drawing.Size(447, 237);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmStockIn";
@@ -234,5 +257,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DateTimePicker dtpDateInput;
+        private System.Windows.Forms.Label label1;
     }
 }

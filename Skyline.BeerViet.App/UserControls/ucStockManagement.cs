@@ -23,7 +23,7 @@ namespace Skyline.BeerViet.App
             base.OnLoad(e);
 
             HttpHelper httpHelper = new HttpHelper();
-            string url = UserConfigs.API_URL + $@"api/Master/GetStocks";
+            string url = UserConfigs.API_URL + $@"api/Stock/GetStocks";
             string result = httpHelper.GETRestService(url);
             if (!string.IsNullOrEmpty(result))
             {
@@ -31,6 +31,7 @@ namespace Skyline.BeerViet.App
                 if (apiRespone != null)
                 {
                     dgvStock.DataSource = apiRespone.Data;
+                    dgvStock.AutoGenerateColumns = false;
                 }
             }
         }
@@ -50,12 +51,48 @@ namespace Skyline.BeerViet.App
             }
 
             int stockId = CodeHelper.ConvertToInt(dgvStock.SelectedRows[0].Cells[colStockId.Name].Value);
+            frmStockIn frm = new frmStockIn(stockId);
+            frm.ShowDialog();
 
         }
 
         private void dgvStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvStock.SelectedRows == null || dgvStock.SelectedRows.Count == 0)
+            {
+                return;
+            }
 
+            int stockId = CodeHelper.ConvertToInt(dgvStock.SelectedRows[0].Cells[colStockId.Name].Value);
+            HttpHelper httpHelper = new HttpHelper();
+            string url = UserConfigs.API_URL + $@"api/Stock/GetStockIn?pStockId={stockId}";
+            string result = httpHelper.GETRestService(url);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ApiRespone<List<StockInModel>> apiRespone = JsonConvert.DeserializeObject<ApiRespone<List<StockInModel>>>(result);
+                if (apiRespone != null)
+                {
+                    dgvStockIn.AutoGenerateColumns = false;
+                    dgvStockIn.DataSource = apiRespone.Data;
+                }
+            }
+
+            //ProvinceId
+            StockModel selected = dgvStock.SelectedRows[0].DataBoundItem as StockModel;
+            url = UserConfigs.API_URL + $@"api/Gif/GetGifByProvince?pProvinceId={selected.ProvinceId}";
+            result = httpHelper.GETRestService(url);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ApiRespone<UseGifModel> apiRespone = JsonConvert.DeserializeObject<ApiRespone<UseGifModel>>(result);
+                if (apiRespone != null)
+                {
+                    dgvSale.AutoGenerateColumns = false;
+                    List<UseGifModel> list = new List<UseGifModel>();
+                    list.Add(apiRespone.Data);
+
+                    dgvSale.DataSource = list;
+                }
+            }
         }
     }
 }

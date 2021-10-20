@@ -51,6 +51,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cboUnit = new System.Windows.Forms.ComboBox();
+            this.nudGif7 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBeerVietNum)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -60,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGif3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGif7)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +113,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboUnit);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtGener);
             this.groupBox1.Controls.Add(this.nudBeerVietNum);
             this.groupBox1.Controls.Add(this.txtPhoneNumber);
@@ -120,7 +127,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(389, 143);
+            this.groupBox1.Size = new System.Drawing.Size(389, 168);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
@@ -159,6 +166,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.nudGif7);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.nudGif6);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.nudGif5);
@@ -171,17 +180,18 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(9, 182);
+            this.groupBox2.Location = new System.Drawing.Point(9, 201);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(389, 171);
+            this.groupBox2.Size = new System.Drawing.Size(389, 200);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin quà tặng";
             // 
             // nudGif6
             // 
+            this.nudGif6.Enabled = false;
             this.nudGif6.Location = new System.Drawing.Point(117, 138);
             this.nudGif6.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif6.Name = "nudGif6";
@@ -201,6 +211,7 @@
             // 
             // nudGif5
             // 
+            this.nudGif5.Enabled = false;
             this.nudGif5.Location = new System.Drawing.Point(117, 115);
             this.nudGif5.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif5.Name = "nudGif5";
@@ -209,6 +220,7 @@
             // 
             // nudGif4
             // 
+            this.nudGif4.Enabled = false;
             this.nudGif4.Location = new System.Drawing.Point(117, 93);
             this.nudGif4.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif4.Name = "nudGif4";
@@ -217,6 +229,7 @@
             // 
             // nudGif3
             // 
+            this.nudGif3.Enabled = false;
             this.nudGif3.Location = new System.Drawing.Point(117, 70);
             this.nudGif3.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif3.Name = "nudGif3";
@@ -225,6 +238,7 @@
             // 
             // nudGif2
             // 
+            this.nudGif2.Enabled = false;
             this.nudGif2.Location = new System.Drawing.Point(117, 47);
             this.nudGif2.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif2.Name = "nudGif2";
@@ -233,6 +247,7 @@
             // 
             // nudGif1
             // 
+            this.nudGif1.Enabled = false;
             this.nudGif1.Location = new System.Drawing.Point(117, 24);
             this.nudGif1.Margin = new System.Windows.Forms.Padding(2);
             this.nudGif1.Name = "nudGif1";
@@ -296,7 +311,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(318, 362);
+            this.btnSave.Location = new System.Drawing.Point(325, 410);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 19);
@@ -305,11 +320,52 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label11.Location = new System.Drawing.Point(14, 137);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 19);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Loại thùng";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboUnit
+            // 
+            this.cboUnit.FormattingEnabled = true;
+            this.cboUnit.Items.AddRange(new object[] {
+            "12",
+            "24"});
+            this.cboUnit.Location = new System.Drawing.Point(118, 134);
+            this.cboUnit.Name = "cboUnit";
+            this.cboUnit.Size = new System.Drawing.Size(255, 21);
+            this.cboUnit.TabIndex = 9;
+            // 
+            // nudGif7
+            // 
+            this.nudGif7.Location = new System.Drawing.Point(117, 163);
+            this.nudGif7.Margin = new System.Windows.Forms.Padding(2);
+            this.nudGif7.Name = "nudGif7";
+            this.nudGif7.Size = new System.Drawing.Size(255, 20);
+            this.nudGif7.TabIndex = 17;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label12.Location = new System.Drawing.Point(14, 160);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 19);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Lon Bia";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 390);
+            this.ClientSize = new System.Drawing.Size(413, 440);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -326,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGif3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGif7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,5 +412,9 @@
         private System.Windows.Forms.NumericUpDown nudGif6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtGener;
+        private System.Windows.Forms.ComboBox cboUnit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudGif7;
+        private System.Windows.Forms.Label label12;
     }
 }
