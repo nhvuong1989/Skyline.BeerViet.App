@@ -17,6 +17,7 @@ namespace Skyline.BeerViet.App
         public bool IsActive { get; set; }
         public bool IsChecked { get; set; }
         public DateTime ExecuteDate { get; set; }
+        public string UniqueCode { get; set; }
 
     }
 }

@@ -230,7 +230,8 @@ namespace Skyline.BeerViet.App
                                         WorkShopName = worksheet.Range[$"A{idx}"].Value,
                                         WorkShopAddress = worksheet.Range[$"B{idx}"].Value,
                                         ResultText = worksheet.Range[$"C{idx}"].Value,
-                                        ExecuteDate = CodeHelper.ConvertToString(worksheet.Range[$"D{idx}"].Value2)
+                                        ExecuteDate = CodeHelper.ConvertToString(worksheet.Range[$"D{idx}"].Value2),
+                                        UniqueCode = worksheet.Range[$"E{idx}"].Value
                                     });
 
                                 idx++;

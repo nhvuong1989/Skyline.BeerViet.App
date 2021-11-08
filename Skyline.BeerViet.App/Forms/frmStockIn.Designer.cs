@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpDateInput = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.nudGif6 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.nudGif5 = new System.Windows.Forms.NumericUpDown();
@@ -42,8 +44,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpDateInput = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGif5)).BeginInit();
@@ -69,81 +69,128 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(27, 11);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(36, 14);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(389, 195);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(519, 240);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhập hàng";
             // 
+            // dtpDateInput
+            // 
+            this.dtpDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateInput.Location = new System.Drawing.Point(156, 194);
+            this.dtpDateInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateInput.Name = "dtpDateInput";
+            this.dtpDateInput.Size = new System.Drawing.Size(339, 22);
+            this.dtpDateInput.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(19, 194);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 23);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Ngày nhập";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // nudGif6
             // 
-            this.nudGif6.Location = new System.Drawing.Point(117, 138);
-            this.nudGif6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif6.Location = new System.Drawing.Point(156, 170);
+            this.nudGif6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif6.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif6.Name = "nudGif6";
-            this.nudGif6.Size = new System.Drawing.Size(255, 20);
+            this.nudGif6.Size = new System.Drawing.Size(340, 22);
             this.nudGif6.TabIndex = 15;
             // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label10.Location = new System.Drawing.Point(14, 135);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(19, 166);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 19);
+            this.label10.Size = new System.Drawing.Size(132, 23);
             this.label10.TabIndex = 14;
             this.label10.Text = "Thùng đá 9l";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudGif5
             // 
-            this.nudGif5.Location = new System.Drawing.Point(117, 115);
-            this.nudGif5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif5.Location = new System.Drawing.Point(156, 142);
+            this.nudGif5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif5.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif5.Name = "nudGif5";
-            this.nudGif5.Size = new System.Drawing.Size(255, 20);
+            this.nudGif5.Size = new System.Drawing.Size(340, 22);
             this.nudGif5.TabIndex = 13;
             // 
             // nudGif4
             // 
-            this.nudGif4.Location = new System.Drawing.Point(117, 93);
-            this.nudGif4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif4.Location = new System.Drawing.Point(156, 114);
+            this.nudGif4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif4.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif4.Name = "nudGif4";
-            this.nudGif4.Size = new System.Drawing.Size(255, 20);
+            this.nudGif4.Size = new System.Drawing.Size(340, 22);
             this.nudGif4.TabIndex = 12;
             // 
             // nudGif3
             // 
-            this.nudGif3.Location = new System.Drawing.Point(117, 70);
-            this.nudGif3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif3.Location = new System.Drawing.Point(156, 86);
+            this.nudGif3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif3.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif3.Name = "nudGif3";
-            this.nudGif3.Size = new System.Drawing.Size(255, 20);
+            this.nudGif3.Size = new System.Drawing.Size(340, 22);
             this.nudGif3.TabIndex = 11;
             // 
             // nudGif2
             // 
-            this.nudGif2.Location = new System.Drawing.Point(117, 47);
-            this.nudGif2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif2.Location = new System.Drawing.Point(156, 58);
+            this.nudGif2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif2.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif2.Name = "nudGif2";
-            this.nudGif2.Size = new System.Drawing.Size(255, 20);
+            this.nudGif2.Size = new System.Drawing.Size(340, 22);
             this.nudGif2.TabIndex = 10;
             // 
             // nudGif1
             // 
-            this.nudGif1.Location = new System.Drawing.Point(117, 24);
-            this.nudGif1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGif1.Location = new System.Drawing.Point(156, 30);
+            this.nudGif1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGif1.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.nudGif1.Name = "nudGif1";
-            this.nudGif1.Size = new System.Drawing.Size(255, 20);
+            this.nudGif1.Size = new System.Drawing.Size(340, 22);
             this.nudGif1.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label9.Location = new System.Drawing.Point(14, 112);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(19, 138);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 19);
+            this.label9.Size = new System.Drawing.Size(132, 23);
             this.label9.TabIndex = 8;
             this.label9.Text = "Áo mưa bia Việt";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -151,10 +198,9 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label5.Location = new System.Drawing.Point(14, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(19, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 19);
+            this.label5.Size = new System.Drawing.Size(132, 23);
             this.label5.TabIndex = 4;
             this.label5.Text = "Nón bảo hiểm";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,10 +208,9 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label6.Location = new System.Drawing.Point(14, 90);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(19, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 19);
+            this.label6.Size = new System.Drawing.Size(132, 23);
             this.label6.TabIndex = 7;
             this.label6.Text = "Đồng hồ treo tường";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,10 +218,9 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label7.Location = new System.Drawing.Point(14, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(19, 57);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 19);
+            this.label7.Size = new System.Drawing.Size(132, 23);
             this.label7.TabIndex = 5;
             this.label7.Text = "Thùng đá 1.6l";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -184,50 +228,32 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label8.Location = new System.Drawing.Point(14, 68);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(19, 84);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 19);
+            this.label8.Size = new System.Drawing.Size(132, 23);
             this.label8.TabIndex = 6;
             this.label8.Text = "Ly thủy tinh";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(341, 211);
+            this.btnSave.Location = new System.Drawing.Point(455, 260);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Nhập kho";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.Location = new System.Drawing.Point(14, 158);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Ngày nhập";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpDateInput
-            // 
-            this.dtpDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateInput.Location = new System.Drawing.Point(117, 158);
-            this.dtpDateInput.Name = "dtpDateInput";
-            this.dtpDateInput.Size = new System.Drawing.Size(255, 20);
-            this.dtpDateInput.TabIndex = 17;
-            // 
             // frmStockIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 237);
+            this.ClientSize = new System.Drawing.Size(596, 292);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmStockIn";
             this.Text = "frmStockIn";
             this.groupBox2.ResumeLayout(false);

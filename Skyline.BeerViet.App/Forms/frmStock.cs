@@ -16,7 +16,8 @@ namespace Skyline.BeerViet.App
         private List<ProvinceModel> GetProvinces()
         {
             HttpHelper httpHelper = new HttpHelper();
-            string url = UserConfigs.API_URL + $@"api/Stock/GetProvincesNotBelongStock";
+            
+            string url = UserConfigs.API_URL + $@"api/Stock/GetProvincesNotBelongStock?pRegion={UserConfigs.Region}";
             string result = httpHelper.GETRestService(url);
             if (!string.IsNullOrEmpty(result))
             {

@@ -59,6 +59,7 @@
             this.ofdExcel = new System.Windows.Forms.OpenFileDialog();
             this.colsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colOutletId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUniqueCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkShopName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkShopAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colResultText = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +89,7 @@
             // 
             this.splProvince.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splProvince.Location = new System.Drawing.Point(0, 0);
+            this.splProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splProvince.Name = "splProvince";
             this.splProvince.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -98,8 +100,9 @@
             // splProvince.Panel2
             // 
             this.splProvince.Panel2.Controls.Add(this.splitContainer1);
-            this.splProvince.Size = new System.Drawing.Size(1081, 607);
-            this.splProvince.SplitterDistance = 278;
+            this.splProvince.Size = new System.Drawing.Size(1441, 747);
+            this.splProvince.SplitterDistance = 342;
+            this.splProvince.SplitterWidth = 5;
             this.splProvince.TabIndex = 0;
             // 
             // dgvProvince
@@ -113,11 +116,12 @@
             this.dgvProvince.ContextMenuStrip = this.cmtProvince;
             this.dgvProvince.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProvince.Location = new System.Drawing.Point(0, 0);
+            this.dgvProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProvince.Name = "dgvProvince";
             this.dgvProvince.RowHeadersVisible = false;
             this.dgvProvince.RowHeadersWidth = 51;
             this.dgvProvince.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProvince.Size = new System.Drawing.Size(1081, 278);
+            this.dgvProvince.Size = new System.Drawing.Size(1441, 342);
             this.dgvProvince.TabIndex = 0;
             this.dgvProvince.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProvince_CellDoubleClick);
             this.dgvProvince.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvProvince_CurrentCellDirtyStateChanged);
@@ -164,19 +168,19 @@
             this.tsmPActive,
             this.tsmPDeactive});
             this.cmtProvince.Name = "cmtOutlet";
-            this.cmtProvince.Size = new System.Drawing.Size(120, 48);
+            this.cmtProvince.Size = new System.Drawing.Size(137, 52);
             // 
             // tsmPActive
             // 
             this.tsmPActive.Name = "tsmPActive";
-            this.tsmPActive.Size = new System.Drawing.Size(119, 22);
+            this.tsmPActive.Size = new System.Drawing.Size(136, 24);
             this.tsmPActive.Text = "Active";
             this.tsmPActive.Click += new System.EventHandler(this.tsmPActive_Click);
             // 
             // tsmPDeactive
             // 
             this.tsmPDeactive.Name = "tsmPDeactive";
-            this.tsmPDeactive.Size = new System.Drawing.Size(119, 22);
+            this.tsmPDeactive.Size = new System.Drawing.Size(136, 24);
             this.tsmPDeactive.Text = "Deactive";
             this.tsmPDeactive.Click += new System.EventHandler(this.tsmPDeactive_Click);
             // 
@@ -184,6 +188,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -196,8 +201,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnExportData);
             this.splitContainer1.Panel2.Controls.Add(this.btnImportOutLet);
             this.splitContainer1.Panel2.Controls.Add(this.btnCreateUser);
-            this.splitContainer1.Size = new System.Drawing.Size(1081, 325);
-            this.splitContainer1.SplitterDistance = 264;
+            this.splitContainer1.Size = new System.Drawing.Size(1441, 400);
+            this.splitContainer1.SplitterDistance = 324;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
             // splDetail
@@ -205,6 +211,7 @@
             this.splDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splDetail.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splDetail.Location = new System.Drawing.Point(0, 0);
+            this.splDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splDetail.Name = "splDetail";
             // 
             // splDetail.Panel1
@@ -214,8 +221,9 @@
             // splDetail.Panel2
             // 
             this.splDetail.Panel2.Controls.Add(this.dgvOutLet);
-            this.splDetail.Size = new System.Drawing.Size(1081, 264);
+            this.splDetail.Size = new System.Drawing.Size(1441, 324);
             this.splDetail.SplitterDistance = 469;
+            this.splDetail.SplitterWidth = 5;
             this.splDetail.TabIndex = 1;
             // 
             // dgvUsers
@@ -230,11 +238,12 @@
             this.dgvUsers.ContextMenuStrip = this.cmtUser;
             this.dgvUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsers.Location = new System.Drawing.Point(0, 0);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersVisible = false;
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(469, 264);
+            this.dgvUsers.Size = new System.Drawing.Size(469, 324);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvUsers_CurrentCellDirtyStateChanged);
             // 
@@ -287,19 +296,19 @@
             this.tsmUActive,
             this.tsmUDeactive});
             this.cmtUser.Name = "cmtOutlet";
-            this.cmtUser.Size = new System.Drawing.Size(120, 48);
+            this.cmtUser.Size = new System.Drawing.Size(137, 52);
             // 
             // tsmUActive
             // 
             this.tsmUActive.Name = "tsmUActive";
-            this.tsmUActive.Size = new System.Drawing.Size(119, 22);
+            this.tsmUActive.Size = new System.Drawing.Size(136, 24);
             this.tsmUActive.Text = "Active";
             this.tsmUActive.Click += new System.EventHandler(this.tsmUActive_Click);
             // 
             // tsmUDeactive
             // 
             this.tsmUDeactive.Name = "tsmUDeactive";
-            this.tsmUDeactive.Size = new System.Drawing.Size(119, 22);
+            this.tsmUDeactive.Size = new System.Drawing.Size(136, 24);
             this.tsmUDeactive.Text = "Deactive";
             this.tsmUDeactive.Click += new System.EventHandler(this.tsmUDeactive_Click);
             // 
@@ -309,6 +318,7 @@
             this.dgvOutLet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colsSelected,
             this.colOutletId,
+            this.colUniqueCode,
             this.colWorkShopName,
             this.colWorkShopAddress,
             this.colResultText,
@@ -317,11 +327,12 @@
             this.dgvOutLet.ContextMenuStrip = this.cmtOutlet;
             this.dgvOutLet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOutLet.Location = new System.Drawing.Point(0, 0);
+            this.dgvOutLet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvOutLet.Name = "dgvOutLet";
             this.dgvOutLet.RowHeadersVisible = false;
             this.dgvOutLet.RowHeadersWidth = 51;
             this.dgvOutLet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOutLet.Size = new System.Drawing.Size(608, 264);
+            this.dgvOutLet.Size = new System.Drawing.Size(967, 324);
             this.dgvOutLet.TabIndex = 0;
             // 
             // cmtOutlet
@@ -331,27 +342,28 @@
             this.tsmActive,
             this.tsmDesctive});
             this.cmtOutlet.Name = "cmtOutlet";
-            this.cmtOutlet.Size = new System.Drawing.Size(120, 48);
+            this.cmtOutlet.Size = new System.Drawing.Size(137, 52);
             // 
             // tsmActive
             // 
             this.tsmActive.Name = "tsmActive";
-            this.tsmActive.Size = new System.Drawing.Size(119, 22);
+            this.tsmActive.Size = new System.Drawing.Size(136, 24);
             this.tsmActive.Text = "Active";
             this.tsmActive.Click += new System.EventHandler(this.tsmActive_Click);
             // 
             // tsmDesctive
             // 
             this.tsmDesctive.Name = "tsmDesctive";
-            this.tsmDesctive.Size = new System.Drawing.Size(119, 22);
+            this.tsmDesctive.Size = new System.Drawing.Size(136, 24);
             this.tsmDesctive.Text = "Deactive";
             this.tsmDesctive.Click += new System.EventHandler(this.tsmDesctive_Click);
             // 
             // btnExportData
             // 
-            this.btnExportData.Location = new System.Drawing.Point(181, 3);
+            this.btnExportData.Location = new System.Drawing.Point(241, 4);
+            this.btnExportData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportData.Name = "btnExportData";
-            this.btnExportData.Size = new System.Drawing.Size(75, 23);
+            this.btnExportData.Size = new System.Drawing.Size(100, 28);
             this.btnExportData.TabIndex = 2;
             this.btnExportData.Text = "Export data";
             this.btnExportData.UseVisualStyleBackColor = true;
@@ -359,9 +371,10 @@
             // 
             // btnImportOutLet
             // 
-            this.btnImportOutLet.Location = new System.Drawing.Point(93, 4);
+            this.btnImportOutLet.Location = new System.Drawing.Point(124, 5);
+            this.btnImportOutLet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImportOutLet.Name = "btnImportOutLet";
-            this.btnImportOutLet.Size = new System.Drawing.Size(75, 23);
+            this.btnImportOutLet.Size = new System.Drawing.Size(100, 28);
             this.btnImportOutLet.TabIndex = 1;
             this.btnImportOutLet.Text = "Import Outlet";
             this.btnImportOutLet.UseVisualStyleBackColor = true;
@@ -369,9 +382,10 @@
             // 
             // btnCreateUser
             // 
-            this.btnCreateUser.Location = new System.Drawing.Point(3, 3);
+            this.btnCreateUser.Location = new System.Drawing.Point(4, 4);
+            this.btnCreateUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateUser.Name = "btnCreateUser";
-            this.btnCreateUser.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateUser.Size = new System.Drawing.Size(100, 28);
             this.btnCreateUser.TabIndex = 0;
             this.btnCreateUser.Text = "Tạo User";
             this.btnCreateUser.UseVisualStyleBackColor = true;
@@ -399,13 +413,21 @@
             this.colOutletId.Visible = false;
             this.colOutletId.Width = 125;
             // 
+            // colUniqueCode
+            // 
+            this.colUniqueCode.DataPropertyName = "UniqueCode";
+            this.colUniqueCode.HeaderText = "Mã code";
+            this.colUniqueCode.MinimumWidth = 6;
+            this.colUniqueCode.Name = "colUniqueCode";
+            this.colUniqueCode.Width = 150;
+            // 
             // colWorkShopName
             // 
             this.colWorkShopName.DataPropertyName = "WorkShopName";
             this.colWorkShopName.HeaderText = "Tên Outlet";
             this.colWorkShopName.MinimumWidth = 6;
             this.colWorkShopName.Name = "colWorkShopName";
-            this.colWorkShopName.Width = 150;
+            this.colWorkShopName.Width = 200;
             // 
             // colWorkShopAddress
             // 
@@ -413,15 +435,15 @@
             this.colWorkShopAddress.HeaderText = "Địa chỉ";
             this.colWorkShopAddress.MinimumWidth = 6;
             this.colWorkShopAddress.Name = "colWorkShopAddress";
-            this.colWorkShopAddress.Width = 250;
+            this.colWorkShopAddress.Width = 280;
             // 
             // colResultText
             // 
             this.colResultText.DataPropertyName = "ResultText";
-            this.colResultText.HeaderText = "Ca làm việc";
+            this.colResultText.HeaderText = "Ca làm";
             this.colResultText.MinimumWidth = 6;
             this.colResultText.Name = "colResultText";
-            this.colResultText.Width = 125;
+            this.colResultText.Width = 80;
             // 
             // colwIsActive
             // 
@@ -429,21 +451,24 @@
             this.colwIsActive.HeaderText = "Hoạt động";
             this.colwIsActive.MinimumWidth = 6;
             this.colwIsActive.Name = "colwIsActive";
-            this.colwIsActive.Width = 125;
+            this.colwIsActive.Width = 80;
             // 
             // colDateActive
             // 
             this.colDateActive.DataPropertyName = "ExecuteDate";
             this.colDateActive.HeaderText = "Ngày hoạt động";
+            this.colDateActive.MinimumWidth = 6;
             this.colDateActive.Name = "colDateActive";
+            this.colDateActive.Width = 125;
             // 
             // ucProvince
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splProvince);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ucProvince";
-            this.Size = new System.Drawing.Size(1081, 607);
+            this.Size = new System.Drawing.Size(1441, 747);
             this.splProvince.Panel1.ResumeLayout(false);
             this.splProvince.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splProvince)).EndInit();
@@ -498,6 +523,7 @@
         private System.Windows.Forms.Button btnExportData;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colsSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOutletId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUniqueCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkShopName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkShopAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colResultText;

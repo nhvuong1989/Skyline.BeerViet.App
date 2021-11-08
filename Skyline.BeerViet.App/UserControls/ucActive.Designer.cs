@@ -36,6 +36,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvCheckIn = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUniqueCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,7 +127,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvSale);
             this.splitContainer1.Size = new System.Drawing.Size(1008, 490);
-            this.splitContainer1.SplitterDistance = 224;
+            this.splitContainer1.SplitterDistance = 223;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvCheckIn
@@ -134,6 +135,7 @@
             this.dgvCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
+            this.colUniqueCode,
             this.colWorkType,
             this.colUserName,
             this.colFullName,
@@ -150,8 +152,9 @@
             this.dgvCheckIn.Name = "dgvCheckIn";
             this.dgvCheckIn.ReadOnly = true;
             this.dgvCheckIn.RowHeadersVisible = false;
+            this.dgvCheckIn.RowHeadersWidth = 51;
             this.dgvCheckIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheckIn.Size = new System.Drawing.Size(1008, 224);
+            this.dgvCheckIn.Size = new System.Drawing.Size(1008, 223);
             this.dgvCheckIn.TabIndex = 0;
             this.dgvCheckIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellContentClick);
             this.dgvCheckIn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellDoubleClick);
@@ -160,72 +163,101 @@
             // 
             this.colId.DataPropertyName = "Id";
             this.colId.HeaderText = "";
+            this.colId.MinimumWidth = 6;
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.Visible = false;
+            this.colId.Width = 125;
+            // 
+            // colUniqueCode
+            // 
+            this.colUniqueCode.DataPropertyName = "UniqueCode";
+            this.colUniqueCode.HeaderText = "Mã code";
+            this.colUniqueCode.MinimumWidth = 6;
+            this.colUniqueCode.Name = "colUniqueCode";
+            this.colUniqueCode.ReadOnly = true;
+            this.colUniqueCode.Width = 150;
             // 
             // colWorkType
             // 
             this.colWorkType.DataPropertyName = "WorkType";
             this.colWorkType.HeaderText = "Loại hình";
+            this.colWorkType.MinimumWidth = 6;
             this.colWorkType.Name = "colWorkType";
             this.colWorkType.ReadOnly = true;
+            this.colWorkType.Width = 125;
             // 
             // colUserName
             // 
             this.colUserName.DataPropertyName = "UserName";
             this.colUserName.HeaderText = "Nhân viên";
+            this.colUserName.MinimumWidth = 6;
             this.colUserName.Name = "colUserName";
             this.colUserName.ReadOnly = true;
+            this.colUserName.Width = 125;
             // 
             // colFullName
             // 
             this.colFullName.DataPropertyName = "FullName";
             this.colFullName.HeaderText = "Tên nhân viên";
+            this.colFullName.MinimumWidth = 6;
             this.colFullName.Name = "colFullName";
             this.colFullName.ReadOnly = true;
+            this.colFullName.Width = 150;
             // 
             // colProvinceName
             // 
             this.colProvinceName.DataPropertyName = "ProvinceName";
             this.colProvinceName.HeaderText = "Tỉnh";
+            this.colProvinceName.MinimumWidth = 6;
             this.colProvinceName.Name = "colProvinceName";
             this.colProvinceName.ReadOnly = true;
+            this.colProvinceName.Width = 125;
             // 
             // colShopName
             // 
             this.colShopName.DataPropertyName = "ShopName";
             this.colShopName.HeaderText = "Chợ";
+            this.colShopName.MinimumWidth = 6;
             this.colShopName.Name = "colShopName";
             this.colShopName.ReadOnly = true;
+            this.colShopName.Width = 125;
             // 
             // colAddress
             // 
             this.colAddress.DataPropertyName = "Address";
             this.colAddress.HeaderText = "Địa chỉ";
+            this.colAddress.MinimumWidth = 6;
             this.colAddress.Name = "colAddress";
             this.colAddress.ReadOnly = true;
+            this.colAddress.Width = 150;
             // 
             // colTeamName
             // 
             this.colTeamName.DataPropertyName = "TeamName";
             this.colTeamName.HeaderText = "Team";
+            this.colTeamName.MinimumWidth = 6;
             this.colTeamName.Name = "colTeamName";
             this.colTeamName.ReadOnly = true;
+            this.colTeamName.Width = 125;
             // 
             // colCheckInTime
             // 
             this.colCheckInTime.DataPropertyName = "CheckInTime";
-            this.colCheckInTime.HeaderText = "Thời gian checkin";
+            this.colCheckInTime.HeaderText = "Checkin";
+            this.colCheckInTime.MinimumWidth = 6;
             this.colCheckInTime.Name = "colCheckInTime";
             this.colCheckInTime.ReadOnly = true;
+            this.colCheckInTime.Width = 125;
             // 
             // colCheckOutTime
             // 
             this.colCheckOutTime.DataPropertyName = "CheckOutTime";
-            this.colCheckOutTime.HeaderText = "Thời gian checkout";
+            this.colCheckOutTime.HeaderText = "Checkout";
+            this.colCheckOutTime.MinimumWidth = 6;
             this.colCheckOutTime.Name = "colCheckOutTime";
             this.colCheckOutTime.ReadOnly = true;
+            this.colCheckOutTime.Width = 125;
             // 
             // cMnuApplication
             // 
@@ -267,8 +299,9 @@
             this.dgvSale.Name = "dgvSale";
             this.dgvSale.ReadOnly = true;
             this.dgvSale.RowHeadersVisible = false;
+            this.dgvSale.RowHeadersWidth = 51;
             this.dgvSale.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSale.Size = new System.Drawing.Size(1008, 262);
+            this.dgvSale.Size = new System.Drawing.Size(1008, 263);
             this.dgvSale.TabIndex = 0;
             this.dgvSale.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSale_CellContentDoubleClick);
             // 
@@ -276,106 +309,128 @@
             // 
             this.colSaleId.DataPropertyName = "SaleId";
             this.colSaleId.HeaderText = "";
+            this.colSaleId.MinimumWidth = 6;
             this.colSaleId.Name = "colSaleId";
             this.colSaleId.ReadOnly = true;
             this.colSaleId.Visible = false;
+            this.colSaleId.Width = 125;
             // 
             // colhUserName
             // 
             this.colhUserName.DataPropertyName = "UserName";
             this.colhUserName.HeaderText = "Mã nhân viên";
+            this.colhUserName.MinimumWidth = 6;
             this.colhUserName.Name = "colhUserName";
             this.colhUserName.ReadOnly = true;
+            this.colhUserName.Width = 125;
             // 
             // colhBeerVietNum
             // 
             this.colhBeerVietNum.DataPropertyName = "BeerVietNum";
             this.colhBeerVietNum.HeaderText = "Số lượng beer";
+            this.colhBeerVietNum.MinimumWidth = 6;
             this.colhBeerVietNum.Name = "colhBeerVietNum";
             this.colhBeerVietNum.ReadOnly = true;
+            this.colhBeerVietNum.Width = 125;
             // 
             // colUnit
             // 
             this.colUnit.DataPropertyName = "Unit";
             this.colUnit.HeaderText = "Loại thùng bia";
+            this.colUnit.MinimumWidth = 6;
             this.colUnit.Name = "colUnit";
             this.colUnit.ReadOnly = true;
+            this.colUnit.Width = 125;
             // 
             // colGener
             // 
             this.colGener.DataPropertyName = "Gener";
             this.colGener.HeaderText = "Giới tính";
+            this.colGener.MinimumWidth = 6;
             this.colGener.Name = "colGener";
             this.colGener.ReadOnly = true;
+            this.colGener.Width = 125;
             // 
             // colCustomerName
             // 
             this.colCustomerName.DataPropertyName = "CustomerName";
             this.colCustomerName.HeaderText = "Tên khách hàng";
+            this.colCustomerName.MinimumWidth = 6;
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Width = 125;
             // 
             // colCustomerPhone
             // 
             this.colCustomerPhone.DataPropertyName = "CustomerPhone";
             this.colCustomerPhone.HeaderText = "Số điện thoại";
+            this.colCustomerPhone.MinimumWidth = 6;
             this.colCustomerPhone.Name = "colCustomerPhone";
             this.colCustomerPhone.ReadOnly = true;
+            this.colCustomerPhone.Width = 125;
             // 
             // colGif7
             // 
             this.colGif7.DataPropertyName = "Gif7";
             this.colGif7.HeaderText = "Lon bia";
+            this.colGif7.MinimumWidth = 6;
             this.colGif7.Name = "colGif7";
             this.colGif7.ReadOnly = true;
+            this.colGif7.Width = 125;
             // 
             // colGif1
             // 
             this.colGif1.DataPropertyName = "Gif1";
             this.colGif1.HeaderText = "Nón bảo hiểm";
+            this.colGif1.MinimumWidth = 6;
             this.colGif1.Name = "colGif1";
             this.colGif1.ReadOnly = true;
-            this.colGif1.Visible = false;
+            this.colGif1.Width = 125;
             // 
             // colGif2
             // 
             this.colGif2.DataPropertyName = "Gif2";
             this.colGif2.HeaderText = "Thùng đá 1.6l";
+            this.colGif2.MinimumWidth = 6;
             this.colGif2.Name = "colGif2";
             this.colGif2.ReadOnly = true;
-            this.colGif2.Visible = false;
+            this.colGif2.Width = 125;
             // 
             // colGif3
             // 
             this.colGif3.DataPropertyName = "Gif3";
             this.colGif3.HeaderText = "Ly thuỷ tinh";
+            this.colGif3.MinimumWidth = 6;
             this.colGif3.Name = "colGif3";
             this.colGif3.ReadOnly = true;
-            this.colGif3.Visible = false;
+            this.colGif3.Width = 125;
             // 
             // colGif4
             // 
             this.colGif4.DataPropertyName = "Gif4";
             this.colGif4.HeaderText = "Đồng hồ treo tường";
+            this.colGif4.MinimumWidth = 6;
             this.colGif4.Name = "colGif4";
             this.colGif4.ReadOnly = true;
-            this.colGif4.Visible = false;
+            this.colGif4.Width = 125;
             // 
             // colGif5
             // 
             this.colGif5.DataPropertyName = "Gif5";
             this.colGif5.HeaderText = "Áo mưa bia việt";
+            this.colGif5.MinimumWidth = 6;
             this.colGif5.Name = "colGif5";
             this.colGif5.ReadOnly = true;
-            this.colGif5.Visible = false;
+            this.colGif5.Width = 125;
             // 
             // colGif6
             // 
             this.colGif6.DataPropertyName = "Gif6";
             this.colGif6.HeaderText = "Thùng đá 9l";
+            this.colGif6.MinimumWidth = 6;
             this.colGif6.Name = "colGif6";
             this.colGif6.ReadOnly = true;
-            this.colGif6.Visible = false;
+            this.colGif6.Width = 125;
             // 
             // ucActive
             // 
@@ -402,7 +457,13 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvCheckIn;
         private System.Windows.Forms.DataGridView dgvSale;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.DateTimePicker dtpViewDate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ContextMenuStrip cMnuApplication;
+        private System.Windows.Forms.ToolStripMenuItem uploadStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUniqueCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFullName;
@@ -412,11 +473,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTeamName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckInTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOutTime;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.DateTimePicker dtpViewDate;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ContextMenuStrip cMnuApplication;
-        private System.Windows.Forms.ToolStripMenuItem uploadStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colhUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colhBeerVietNum;

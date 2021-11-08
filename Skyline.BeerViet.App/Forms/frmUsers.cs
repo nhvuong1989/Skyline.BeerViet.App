@@ -28,8 +28,9 @@ namespace Skyline.BeerViet.App
 
             List<MasterData> masters = new List<MasterData>()
             {
-                new MasterData{ Id = "1", Name="Moblie"},
-                new MasterData{ Id = "2", Name="Van"}
+                new MasterData{ Id = "1", Name="Booth"},
+                new MasterData{ Id = "2", Name="Van"},
+                new MasterData{ Id = "3", Name="Trolley"}
             };
             cboTeamType.ValueMember = "Id";
             cboTeamType.DisplayMember = "Name";

@@ -23,7 +23,7 @@ namespace Skyline.BeerViet.App
             base.OnLoad(e);
 
             HttpHelper httpHelper = new HttpHelper();
-            string url = UserConfigs.API_URL + $@"api/Stock/GetStocks";
+            string url = UserConfigs.API_URL + $@"api/Stock/GetStocks?pRegion={UserConfigs.Region}";
             string result = httpHelper.GETRestService(url);
             if (!string.IsNullOrEmpty(result))
             {
@@ -40,6 +40,19 @@ namespace Skyline.BeerViet.App
         {
             frmStock frm = new frmStock();
             frm.ShowDialog();
+
+            HttpHelper httpHelper = new HttpHelper();
+            string url = UserConfigs.API_URL + $@"api/Stock/GetStocks?pRegion={UserConfigs.Region}";
+            string result = httpHelper.GETRestService(url);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ApiRespone<List<StockModel>> apiRespone = JsonConvert.DeserializeObject<ApiRespone<List<StockModel>>>(result);
+                if (apiRespone != null)
+                {
+                    dgvStock.DataSource = apiRespone.Data;
+                    dgvStock.AutoGenerateColumns = false;
+                }
+            }
         }
 
         private void btnStockIn_Click(object sender, EventArgs e)

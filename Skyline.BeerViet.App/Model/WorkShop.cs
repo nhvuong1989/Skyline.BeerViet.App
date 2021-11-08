@@ -7,6 +7,6 @@
         public string ResultText { get; set; }
         public int ProvinceId { get; set; }
         public string ExecuteDate { get; set; }
-
+        public string UniqueCode { get; set; }
     }
 }
